@@ -150,3 +150,12 @@ function acp() {
   git add .
   git commit -m "$1"
 }
+
+# fonction access rapide fichier 42
+function 42()
+{
+    cd /Users/waxcoin/Desktop/42/Piscine/
+    cd /Users/waxcoin/Desktop/42/Piscine/$1
+    cd /Users/waxcoin/Desktop/42/Piscine/$1/$2
+}
+
