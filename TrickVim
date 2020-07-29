@@ -1,0 +1,36 @@
+indentation nombre sur la ligne: 
+    ctrl a
+autocompletion:
+    ctrl n
+autocompletion file in dire:
+    ctrl x f
+go sur le file selectionné:
+    gf
+    
+command until jusqu'a:
+    t
+
+deplacement par mot:
+    /recherche du mot
+
+Creation session a réouvrir: 
+    mksession file.vim
+Ouverture fichier .vim:  
+    vim -S file.vim
+
+Cretion viewport:
+    ctrl w v ou :sp
+dimension des fenetres:
+    ctrl w + or -
+switch view:
+    ctrl w "direction fleches"
+
+Ouverture comme Nerthtree:
+    :Lex
+Mettre vim en backgroud:
+    ctrl z
+et lancer vim avec la command sur la terminal:
+    fg
+Ouverture Man page dans Vim
+    :Man <recherche>
+   
