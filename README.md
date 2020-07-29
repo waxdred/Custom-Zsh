@@ -24,3 +24,5 @@ vim ./zshrc colle ce code:
 
 Remplacer les .vimrc et .zsh par les nouvelles configues
 mettre cool.vim .vim/bundle/vim-airline-themes/autoload/airline/themes
+Ajouter les fichier highlight.vim
+/Users/waxcoin/.vim/plugin/
