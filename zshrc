@@ -9,11 +9,14 @@ export ZSH="/Users/waxcoin/.oh-my-zsh"
 
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+#
 ZSH_THEME="powerlevel9k/powerlevel9k"
+#ZSH_THEME="robbyrussell"
 POWERLEVEL9K_MODE='nerdfont-complete'
 
 # Please only use this battery segment if you have material icons in your nerd font (or font)
 # Otherwise, use the font awesome one in "User Segments"
+
 prompt_zsh_battery_level() {
   local percentage1=`pmset -g ps  |  sed -n 's/.*[[:blank:]]+*\(.*%\).*/\1/p'`
   local percentage=`echo "${percentage1//\%}"`
@@ -72,45 +75,40 @@ zsh_internet_signal(){
   fi
   echo -n "%{$color%}$symbol "
 }
-
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
-POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
-POWERLEVEL9K_SHORTEN_STRATEGY="truncate_beginning"
-POWERLEVEL9K_RVM_BACKGROUND="black"
-POWERLEVEL9K_RVM_FOREGROUND="249"
-POWERLEVEL9K_RVM_VISUAL_IDENTIFIER_COLOR="red"
-POWERLEVEL9K_TIME_BACKGROUND="black"
-POWERLEVEL9K_TIME_FOREGROUND="249"
+# retour a la line 
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
+POWERLEVEL9K_SHORTEN_DELIMITER=""
+POWERLEVEL9K_SHORTEN_STRATEGY="truncate_absolute"
+# time setting
+POWERLEVEL9K_TIME_BACKGROUND="81"
+POWERLEVEL9K_TIME_FOREGROUND="0"
 POWERLEVEL9K_TIME_FORMAT="\UF43A %D{%I:%M  \UF133  %m.%d.%y}"
-POWERLEVEL9K_RVM_BACKGROUND="black"
-POWERLEVEL9K_RVM_FOREGROUND="249"
-POWERLEVEL9K_RVM_VISUAL_IDENTIFIER_COLOR="red"
-POWERLEVEL9K_STATUS_VERBOSE=false
+POWERLEVEL9K_STATUS_OK=true
+# tracker git
 POWERLEVEL9K_VCS_CLEAN_FOREGROUND='black'
 POWERLEVEL9K_VCS_CLEAN_BACKGROUND='green'
 POWERLEVEL9K_VCS_UNTRACKED_FOREGROUND='black'
 POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='yellow'
-POWERLEVEL9K_VCS_MODIFIED_FOREGROUND='black'
+POWERLEVEL9K_VCS_MODIFIED_FOREGROUND='white'
 POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='black'
+# timer excecution
 POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND='black'
 POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND='blue'
 POWERLEVEL9K_FOLDER_ICON=''
 POWERLEVEL9K_STATUS_OK_IN_NON_VERBOSE=true
 POWERLEVEL9K_STATUS_VERBOSE=false
 POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=0
-POWERLEVEL9K_VCS_UNTRACKED_ICON='\u25CF'
-POWERLEVEL9K_VCS_UNSTAGED_ICON='\u00b1'
-POWERLEVEL9K_VCS_INCOMING_CHANGES_ICON='\u2193'
-POWERLEVEL9K_VCS_OUTGOING_CHANGES_ICON='\u2191'
-POWERLEVEL9K_VCS_COMMIT_ICON="\uf417"
-POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%F{blue}\u256D\u2500%F{white}"
-POWERLEVEL9K_MULTILINE_SECOND_PROMPT_PREFIX="%F{blue}\u2570\uf460%F{white} "
+#color returnn bar
+POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%F{blue}\u256D\u2500%f"
+POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{blue}\u2570\uf460%f "
+
+#logo apple
 POWERLEVEL9K_CUSTOM_BATTERY_STATUS="prompt_zsh_battery_level"
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon user custom_internet_signal custom_battery_status_joined ssh root_indicator dir dir_writable vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time root_indicator background_jobs time disk_usage ram)
-HIST_STAMPS="mm/dd/yyyy"
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(command_execution_time  status ram time background_jobs)
 DISABLE_UPDATE_PROMPT=true
 
 plugins=(
@@ -143,7 +141,6 @@ alias python="/usr/local/bin/python3.8"
 alias p3="ssh root@108.61.176.225"
 alias mfs="./mfsconsole.sh"
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
 alias h="figlet Hacker | lolcat -a -s 1000 -F 0.3"
 alias l="ls | lolcat -a -s 1000 -F 0.3"
 alias ctf="/Users/waxcoin/Desktop/CTF"
@@ -159,9 +156,9 @@ function acp() {
 # fonction access rapide fichier 42
 function 42()
 {
-    cd /Users/waxcoin/Desktop/42/Piscine/
-    cd /Users/waxcoin/Desktop/42/Piscine/$1
-    cd /Users/waxcoin/Desktop/42/Piscine/$1/$2
+    cd /Users/waxcoin/Desktop/42
+    cd /Users/waxcoin/Desktop/42/$1
+    cd /Users/waxcoin/Desktop/42/$1/$2
 }
 #function openclasseroom
 function openclassroom()
@@ -186,3 +183,4 @@ function openclassroom()
         fi
     fi
 }
+
