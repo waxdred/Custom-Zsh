@@ -25,19 +25,32 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline#extensions#branch#enabled = 1
 
 " Creation hi with matching
-autocmd FileType c match Identifier /ft_[a-z]*/
+autocmd FileType c match Identifier /ft_[a-z_]*/
 autocmd FileType c 2match Type /[+=\-%\/<>*&]/
 autocmd FileType c 3match Value /'[a-z,0-9 A-Z]'/
 
 " Mapping appel fonction
-map <F2> :call MakeFile()<CR><CR>
-map <F3> :call C_compile()<CR><CR> :copen <CR>
-map <F4> :call MainC()<CR><CR>
+nmap <F2> :call MakeFile()<CR><CR>
+nmap <F3> :call C_compile()<CR><CR> :copen <CR>
+nmap <F4> :call MainC()<CR><CR>
+" mapping avec Tab pour changer de buffer
+nmap <Tab> :bn<CR>
+" mapping change viewport
+nnoremap <S-Tab> <C-W><C-W>
+
+
 
 " Custom indentPlugin Show
-let g:indentLine_color_term = 4
-let g:indentLine_bgcolor_term = 0
-let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_auto_colors = 0
+set ts=4 sw=4 et
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
+hi IndentGuidesOdd  ctermbg=238
+hi IndentGuidesEven ctermbg=242
+hi Error NONE
+hi ErrorMsg NONE
+nnoremap <space> za
 
 " add man in vim cmd Man
 runtime! ftplugin/man.vim
@@ -122,7 +135,8 @@ let g:SimpylFold_docstring_preview=1
 "call vundle#begin('~/some/path/here')
 call vundle#begin()
 
-filetype plugin indent on    " required
+filetype plugin on
+filetype indent on    " required
 
 "====================================
 " let Vundle manage Vundle, required=
@@ -131,12 +145,12 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'Yggdroot/indentLine'
 Plugin 'gerardbm/vim-atomic'
+Plugin 'nathanaelkane/vim-indent-guides'
+
 " For install use 
 "       :PluginIsntall
 call vundle#end()            " required
-filetype plugin indent on    " required
 
 " Airline_Vim
 let g:airline_powerline_fonts = 1

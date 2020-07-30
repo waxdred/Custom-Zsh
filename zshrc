@@ -79,7 +79,6 @@ POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
 # retour a la line 
-POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
 POWERLEVEL9K_SHORTEN_DELIMITER=""
 POWERLEVEL9K_SHORTEN_STRATEGY="truncate_absolute"
 # time setting
@@ -107,7 +106,7 @@ POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{blue}\u2570\uf460%f "
 
 #logo apple
 POWERLEVEL9K_CUSTOM_BATTERY_STATUS="prompt_zsh_battery_level"
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon user custom_internet_signal custom_battery_status_joined ssh root_indicator dir dir_writable vcs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon user custom_internet_signal custom_battery_status_joined ssh root_indicator dir    vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(command_execution_time  status ram time background_jobs)
 DISABLE_UPDATE_PROMPT=true
 

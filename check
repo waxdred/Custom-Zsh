@@ -1,0 +1,241 @@
+#! /bin/bash
+
+# get pwd in variable
+pwd="$(pwd)"
+cd $pwd
+
+# declare int of wc of the dir
+#declare -i countfile="$(ls -d $pwd*/* | wc -l | awk '{print $1}')"
+declare -i i=0
+
+# récupere le nom des fichier ex
+fileEx=$(ls -d * | grep ex)
+
+# variable color
+Cyan='\033[1;36m'
+Red='\033[0;31m'
+Color_Off='\033[0m'
+countfile=$((countfile - 1))
+ok="${Red}[${Cyan} OK ${Red}]${Color_Off}"
+errors="${Red}[${Cyan} ERROR ${Red}]${Color_Off}"
+
+# creation du fliglet
+printf "\n$Cyan"
+figlet -f big "CHECKING  42"
+printf "$Color_Off"
+
+
+                            #checking
+####################################################################################
+checkAvaibleInclude()
+{
+    local include="$(cat $pwd/*/* | grep $1)"
+
+    #check value emply or not 
+    if [ -z "$include" ]
+    then
+        echo -e "*$Red$2$Color_Off          $ok"
+    else
+        echo -e "*$Red$2$Color_Off          $ok"
+fi
+}
+
+checkUnvaible()
+{
+    local include="$(grep -E -l $1 $pwd/*/*)"
+
+    #check value emply or not 
+    if [ -z "$include" ]
+    then
+        echo -e "*$Red$2$Color_Off         $ok"
+    else
+        echo -e "*$Red$2$Color_Off         $errors"
+        echo -e "*File errors:\n                               $Red$include $Color_Off"
+fi
+}
+
+checkFileC()
+{
+    local result=""
+    local tempfile=""
+    i=0
+    for files in $fileEx
+    do
+        tempfile=$(find -E $pwd/$files -regex '.*\.(c)')
+        if [ -z "$tempfile" ]
+        then
+            result=$"$result                               $pwd/$files\n"
+        fi
+        i=$((i + 1))
+    done
+    #check value emply or not 
+    if [ -z "$result" ]
+    then
+        echo -e "*$Red$2$Color_Off               $ok"
+    else
+        echo -e "*$Red$2$Color_Off               $errors"
+        echo -e "*File errors:\n$Red$result $Color_Off"
+    fi
+}
+
+
+checkDelFile()
+{
+    local result=""
+    local tempfile=""
+    i=0
+    for files in $fileEx
+    do
+        tempfile=$(ls $pwd/$files | grep $1)
+        if [ -z "$tempfile" ]
+        then
+            file=
+        else
+            result=$"$result                                 $pwd/$files\n"
+        fi
+        i=$((i + 1))
+    done
+    #check value emply or not 
+    if [ -z "$result" ]
+    then
+        echo -e "*$Red$2$Color_Off                 $ok"
+    else
+        echo -e "*$Red$2$Color_Off                 $errors"
+        echo -e "*File errors:\n$Red$result $Color_Off"
+    fi
+}
+
+checkDstore()
+{
+    local result=""
+    local tempfile=""
+
+    tempfile=$(ls -la $pwd | grep $1)
+    if [ -z "$tempfile" ]
+    then
+        file=
+    else
+        result=$"$result                                 $pwd/ex$foo\n"
+    fi
+    #check value emply or not 
+    if [ -z "$result" ]
+    then
+        echo -e "*$Red$2$Color_Off                 $ok"
+    else
+        echo -e "*$Red$2$Color_Off                 $errors"
+        echo -e "*File errors:\n$Red                                  $pwd $Color_Off"
+    fi
+}
+
+                                #Clear files
+####################################################################################
+
+clearMakefile()
+{
+    clear=$(rm ${pwd}/*/Makefile 2>&1)
+    if [ $? -eq 0 ]
+    then
+        echo -e "${Cyan}Clean Makefile${Color_Off}         ${Red}[${Cyan}Done${Red}]${Color_Off} "
+    else
+        echo -e "${Cyan}Clean Makefile${Color_Off}         ${Red}[${Cyan}Already${Red}]${Color_Off} "
+    fi
+}
+
+clearOut()
+{
+    clear=$(rm ${pwd}/*/*.out 2>&1)
+    if [ $? -eq 0 ]
+    then
+        echo -e "${Cyan}Clean .out${Color_Off}             ${Red}[${Cyan}Done${Red}]${Color_Off} "
+    else
+        echo -e "${Cyan}Clean .out${Color_Off}             ${Red}[${Cyan}Already${Red}]${Color_Off} "
+    fi
+}
+
+clearOutput()
+{
+    clear=$(rm ${pwd}/*/result_c 2>&1)
+    if [ $? -eq 0 ]
+    then
+        echo -e "${Cyan}Clean result_c${Color_Off}         ${Red}[${Cyan}Done${Red}]${Color_Off} "
+    else
+        echo -e "${Cyan}Clean result_c${Color_Off}         ${Red}[${Cyan}Already${Red}]${Color_Off} "
+    fi
+}
+
+clearDs()
+{
+    clear=$(rm -rf ${pwd}/.DS_Store 2>&1)
+    if [ $? -eq 0 ]
+    then
+        echo -e "${Cyan}Clean .DS_Store${Color_Off}        ${Red}[${Cyan}Done${Red}]${Color_Off} "
+    else
+        echo -e "${Cyan}Clean .DS_Store${Color_Off}        ${Red}[${Cyan}Already${Red}]${Color_Off} "
+    fi
+}
+
+                                #Option#
+####################################################################################
+CheckFull()
+{
+    checkUnvaible '//'  'Check Comment          '
+    checkDelFile '.out' 'Check file out '
+    checkDelFile 'Makefile' 'Check Makefile '
+    checkDelFile 'result_c' 'Check result_c '
+    checkDstore '.DS_Store' 'Check .DS_Store'
+    checkFileC '.c' 'Check Empty file '
+    checkAvaibleInclude 'unistd.h' 'Check Avaible include '
+    checkUnvaible 'stdio.h|strings.h|stdlib.h' 'Check Unvaible include '
+    checkUnvaible 'main' 'Check Main             '
+}
+####################################################################################
+
+
+if [ $# -eq 0 ]
+then
+    CheckFull
+else
+    if [[ $1 == '--help' ]]
+    then
+        echo -e "Command List:${Cyan}
+        -------------------------------------------------------
+        |${Red}------------------Command----------------------------${Cyan}|
+        -------------------------------------------------------
+        |* ${Red}-test      ${Cyan}===> Testing the files                  |
+        |* ${Red}-all       ${Cyan}===> Clean all file .out result makefile|
+        |* ${Red}-makefile ${Cyan} ===> Clean makefile                     |
+        |* ${Red}-out      ${Cyan} ===> Clean .out                         |
+        |* ${Red}-ds       ${Cyan} ===> Clean .DS_Store                    |
+        |* ${Red}-output   ${Cyan} ===> Clean Result output                |
+        -------------------------------------------------------${Color_Off}"
+    elif [[ $1 == '-test' ]]
+    then
+        CheckFull
+    elif [[ $1 == '-all' ]]
+    then
+        clearOut
+        clearMakefile
+        clearOutput
+        clearDs
+
+        elif [[ $1 == '-makefile' ]]
+        then
+        clearMakefile
+
+    elif [[ $1 == '-out' ]]
+    then
+        clearOut
+
+    elif [[ $1 == '-ds' ]]
+    then
+    clearDs
+
+    elif [[ $1 == '-output' ]]
+    then
+        clearOutput
+
+    else
+        echo -e "${Cyan}check --help${Color_Off} for the command list"
+    fi
+fi
+
