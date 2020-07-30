@@ -8,30 +8,32 @@
   },
   "Rows" : 25,
   "Ansi 11 Color" : {
-    "Green Component" : 0.67578125,
-    "Blue Component" : 0,
-    "Red Component" : 0.80078125
+    "Green Component" : 1,
+    "Blue Component" : 0.3333333432674408,
+    "Red Component" : 1
   },
   "Use Italic Font" : true,
   "Foreground Color" : {
-    "Green Component" : 0.7619737982749939,
-    "Blue Component" : 0.76079577207565308,
-    "Red Component" : 0.68694168329238892
+    "Green Component" : 0.73333334922790527,
+    "Blue Component" : 0.73333334922790527,
+    "Red Component" : 0.73333334922790527
   },
   "Use Custom Window Title" : false,
   "Right Option Key Sends" : 0,
   "Character Encoding" : 4,
   "Selection Color" : {
-    "Green Component" : 0.74590206146240234,
+    "Green Component" : 0.8353000283241272,
     "Blue Component" : 1,
-    "Red Component" : 0.48940977454185486
+    "Red Component" : 0.70980000495910645
   },
-  "Blend" : 1,
+  "Blend" : 0.35135107925257736,
   "Mouse Reporting" : true,
   "Ansi 4 Color" : {
-    "Green Component" : 0.6015625,
-    "Blue Component" : 0.80078125,
-    "Red Component" : 0
+    "Red Component" : 0.17254901960784313,
+    "Color Space" : "sRGB",
+    "Blue Component" : 1,
+    "Alpha Component" : 1,
+    "Green Component" : 0.76078431372549016
   },
   "Non-ASCII Anti Aliased" : true,
   "Sync Title" : false,
@@ -57,9 +59,11 @@
   },
   "BM Growl" : true,
   "Ansi 3 Color" : {
-    "Green Component" : 0.67578125,
-    "Blue Component" : 0,
-    "Red Component" : 0.80078125
+    "Red Component" : 0.17254901960784313,
+    "Color Space" : "sRGB",
+    "Blue Component" : 1,
+    "Alpha Component" : 1,
+    "Green Component" : 0.76078431372549016
   },
   "Icon" : 2,
   "Use Non-ASCII Font" : false,
@@ -71,7 +75,7 @@
     "Green Component" : 0.35916060209274292
   },
   "Shortcut" : "",
-  "Background Image Location" : "\/Users\/waxcoin\/Desktop\/iWkhVx.png",
+  "Background Image Location" : "\/Users\/waxcoin\/Custom-Zsh\/logo\/wallpaper2you_23188.jpg",
   "Bold Color" : {
     "Green Component" : 1,
     "Blue Component" : 1,
@@ -236,14 +240,16 @@
     }
   },
   "Ansi 14 Color" : {
-    "Green Component" : 0.76953125,
-    "Blue Component" : 0.80078125,
-    "Red Component" : 0.4765625
+    "Green Component" : 1,
+    "Blue Component" : 1,
+    "Red Component" : 0.3333333432674408
   },
   "Ansi 2 Color" : {
-    "Green Component" : 0.60546875,
-    "Blue Component" : 0.4375,
-    "Red Component" : 0.33203125
+    "Red Component" : 0.17254901960784313,
+    "Color Space" : "sRGB",
+    "Blue Component" : 1,
+    "Alpha Component" : 1,
+    "Green Component" : 0.76078431372549016
   },
   "Send Code When Idle" : false,
   "ASCII Anti Aliased" : true,
@@ -251,48 +257,52 @@
 
   ],
   "Ansi 9 Color" : {
-    "Green Component" : 0.1875,
-    "Blue Component" : 0.1875,
+    "Green Component" : 0.3333333432674408,
+    "Blue Component" : 0.3333333432674408,
     "Red Component" : 1
   },
   "Use Bold Font" : true,
   "Silence Bell" : false,
   "Ansi 12 Color" : {
-    "Green Component" : 0.6015625,
-    "Blue Component" : 0.80078125,
-    "Red Component" : 0
+    "Green Component" : 0.3333333432674408,
+    "Blue Component" : 1,
+    "Red Component" : 0.3333333432674408
   },
   "Window Type" : 0,
   "Use Bright Bold" : true,
   "Cursor Text Color" : {
-    "Green Component" : 0,
-    "Blue Component" : 0,
-    "Red Component" : 0
-  },
-  "Default Bookmark" : "No",
-  "Cursor Color" : {
     "Green Component" : 1,
     "Blue Component" : 1,
     "Red Component" : 1
   },
+  "Default Bookmark" : "No",
+  "Cursor Color" : {
+    "Red Component" : 0.17254901960784313,
+    "Color Space" : "sRGB",
+    "Blue Component" : 1,
+    "Alpha Component" : 1,
+    "Green Component" : 0.76078431372549016
+  },
   "Ansi 1 Color" : {
-    "Green Component" : 0.1875,
-    "Blue Component" : 0.1875,
-    "Red Component" : 1
+    "Red Component" : 0.9986572265625,
+    "Color Space" : "sRGB",
+    "Blue Component" : 0.01605224609375,
+    "Alpha Component" : 1,
+    "Green Component" : 0.10676553100347519
   },
   "Name" : "Waxcoin",
-  "Blinking Cursor" : false,
+  "Blinking Cursor" : true,
   "Guid" : "7B9F7942-9349-4185-B46F-7950F899135D",
   "Idle Code" : 0,
   "Ansi 10 Color" : {
-    "Green Component" : 0.60546875,
-    "Blue Component" : 0.4375,
-    "Red Component" : 0.33203125
+    "Green Component" : 1,
+    "Blue Component" : 0.3333333432674408,
+    "Red Component" : 0.3333333432674408
   },
   "Ansi 8 Color" : {
-    "Green Component" : 0,
-    "Blue Component" : 0,
-    "Red Component" : 0
+    "Green Component" : 0.3333333432674408,
+    "Blue Component" : 0.3333333432674408,
+    "Red Component" : 0.3333333432674408
   },
   "Badge Color" : {
     "Red Component" : 1,
@@ -302,39 +312,46 @@
     "Green Component" : 0.1491314172744751
   },
   "Ambiguous Double Width" : false,
-  "Blur Radius" : 13.488953442258882,
-  "Background Image Mode" : 0,
+  "Blur Radius" : 26.598068686548224,
+  "Background Image Mode" : 2,
   "Ansi 0 Color" : {
-    "Green Component" : 0,
-    "Blue Component" : 0,
-    "Red Component" : 0
+    "Red Component" : 0.20000000000000001,
+    "Color Space" : "sRGB",
+    "Blue Component" : 0.20000000000000001,
+    "Alpha Component" : 1,
+    "Green Component" : 0.20000000000000001
   },
-  "Blur" : false,
+  "Blur" : true,
   "Vertical Spacing" : 1,
-  "Normal Font" : "MesloLGLDZNerdFontComplete-Regular 12",
+  "Normal Font" : "MesloLGLDZNerdFontComplete-Regular 11",
   "Ansi 7 Color" : {
-    "Green Component" : 0.80078125,
-    "Blue Component" : 0.80078125,
-    "Red Component" : 0.73828125
+    "Red Component" : 0.595306396484375,
+    "Color Space" : "sRGB",
+    "Blue Component" : 0.595306396484375,
+    "Alpha Component" : 1,
+    "Green Component" : 0.595306396484375
   },
   "Command" : "",
   "Terminal Type" : "xterm-256color",
   "Horizontal Spacing" : 1,
   "Option Key Sends" : 2,
-  "Only The Default BG Color Uses Transparency" : false,
-  "Custom Icon Path" : "\/Users\/waxcoin\/Desktop\/ba9592dd4daa6cf2de7e8fbff2ad9127.png",
+  "Only The Default BG Color Uses Transparency" : true,
+  "Minimum Contrast" : 0.49813565340909088,
+  "Custom Icon Path" : "\/Users\/waxcoin\/shell_config\/logo\/darkArmy.png",
   "Ansi 15 Color" : {
-    "Green Component" : 0.80078125,
-    "Blue Component" : 0.80078125,
-    "Red Component" : 0.73828125
+    "Green Component" : 1,
+    "Blue Component" : 1,
+    "Red Component" : 1
   },
   "Open Toolbelt" : false,
   "Ansi 6 Color" : {
-    "Green Component" : 0.76953125,
-    "Blue Component" : 0.80078125,
-    "Red Component" : 0.4765625
+    "Red Component" : 0.17254901960784313,
+    "Color Space" : "sRGB",
+    "Blue Component" : 1,
+    "Alpha Component" : 1,
+    "Green Component" : 0.76078431372549016
   },
-  "Transparency" : 0.28963753172588841,
+  "Transparency" : 0.87205345812182744,
   "Initial Text" : "",
   "Background Color" : {
     "Green Component" : 0,
@@ -345,21 +362,17 @@
   "Initial Use Transparency" : false,
   "Non Ascii Font" : "Monaco 12",
   "Ansi 13 Color" : {
-    "Red Component" : 0.35194756742566824,
-    "Color Space" : "sRGB",
-    "Blue Component" : 0.833221435546875,
-    "Alpha Component" : 1,
-    "Green Component" : 0.47098823823628777
+    "Green Component" : 0.3333333432674408,
+    "Blue Component" : 1,
+    "Red Component" : 1
   },
   "Columns" : 80,
   "Visual Bell" : true,
   "ASCII Ligatures" : true,
   "Custom Directory" : "No",
   "Ansi 5 Color" : {
-    "Red Component" : 0.087927386582009603,
-    "Color Space" : "sRGB",
-    "Blue Component" : 0.832275390625,
-    "Alpha Component" : 1,
-    "Green Component" : 0.059167038649320602
+    "Green Component" : 0,
+    "Blue Component" : 0.73333334922790527,
+    "Red Component" : 0.73333334922790527
   }
 }

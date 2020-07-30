@@ -13,10 +13,10 @@ installNerdFont()
 
 settingFont()
 {
-	echo -e "$Cyan Open setting Profil/text/font \nchoose Meslo LG LD nerd font$Color_Off"
+	echo -e "$Cyan Open setting Profil/Other action/import JSon Profil $Color_Off"
 	echo "Setting finish?"
 	read var
-	echo "$Cyan Changer color Profil/Colors/Color Preset/import\n/custome_Zsh/Wax_Iterm.itercolors$Color_Off"
+	echo -e "$Cyan Changer color Profil/Colors/Color Preset/import\n /custome_Zsh/Wax_Iterm.itercolors$Color_Off"
 	echo "Setting finsih?"
 	read var
 }
@@ -41,7 +41,7 @@ configVimrc()
 installVumble()
 {
 	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-	echo "$Cyan open new page vim use :PluginInstall $Color_Off"
+	echo -e "$Cyan open new page vim use :PluginInstall$Color_Off"
 	echo "Setting finish?"
 	read var
 }
