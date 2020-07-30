@@ -9,8 +9,8 @@ follow the instruction
 
 screenshot theme
 
-![GitHub Logo](/logo/powerlineShell)
+![GitHub Logo](/logo/powerlineShell.png)
 Format: ![Alt Text](url)
 
-![GitHub Logo](/logo/powerlineVim)
+![GitHub Logo](/logo/powerlineVim.png)
 Format: ![Alt Text](url)
