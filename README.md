@@ -1,28 +1,16 @@
-# Custom-Zsh
 
-installation du theme therminal link:
-https://github.com/powerline/fonts
+Attention the script change your .vimrc and .zshrc save yours before 
+Installation thême powerline custom Cyan:
+git clone https://github.com/waxdred/Custom-Zsh.git
 
-telecharge les font:
-https://github.com/ryanoasis/nerd-fonts
-comment line:
-# clone
-git clone https://github.com/powerline/fonts.git --depth=1
-# install
-cd fonts
 ./install.sh
-# clean-up a bit
-cd ..
-rm -rf fonts
 
-setting profil/text/choose
-MesloLGLDZ Nerd Font
+follow the instruction
 
-ajout du theme:
-https://github.com/Powerlevel9k/powerlevel9k/wiki/Show-Off-Your-Config
-vim ./zshrc colle ce code:
+screenshot theme
 
-Remplacer les .vimrc et .zsh par les nouvelles configues
-mettre cool.vim .vim/bundle/vim-airline-themes/autoload/airline/themes
-Ajouter les fichier highlight.vim
-/Users/waxcoin/.vim/plugin/
+![GitHub Logo](/logo/powerlineShell)
+Format: ![Alt Text](url)
+
+![GitHub Logo](/logo/powerlineVim)
+Format: ![Alt Text](url)
