@@ -1,14 +1,9 @@
 #! /bin/bash
 
-installZsh()
-{
-	sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-}
-
 installNerdFont()
 {
 	echo "Copy font "
-	cp ~/Custom-Zsh/Fonts/* $HOME/Library/Fonts 
+	cp ~/Custom-Zsh/font/* $HOME/Library/Fonts 
 }
 
 settingFont()
@@ -49,7 +44,7 @@ installVumble()
 installColorVim()
 {
 	echo "Copy Color airline vim"
-	cp ~/Custom-Zsh/cool.vim .vim/bundle/vim-airline-themes/autoload/airline/themes
+	cp ~/Custom-Zsh/cool.vim ~/.vim/bundle/vim-airline-themes/autoload/airline/themes
 	echo "Copy Color vim"
 	mkdir ~/.vim/Colors
 	cp ~/Custom-Zsh/wax.vim ~/.vim/Colors
@@ -64,7 +59,6 @@ installScriptVim()
     cp ~/Custom-Zsh/check ~/script_vim/.
 }
 
-installZsh
 installNerdFont
 settingFont
 installPowerline
