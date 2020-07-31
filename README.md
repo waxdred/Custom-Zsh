@@ -1,5 +1,5 @@
 
-##Attention the script change your .vimrc and .zshrc save yours before or install manual 
+#Attention the script change your .vimrc and .zshrc save yours before or install manual 
 Installation thême powerline custom Cyan:
 git clone https://github.com/waxdred/Custom-Zsh.git
 
@@ -48,7 +48,8 @@ save and run vi again
 ```
 
 after add in .vimrc
-
+```vim
+colo ColorCyan
 "Vim airline setting
 ```vim
 let g:airline_theme="cool" 
