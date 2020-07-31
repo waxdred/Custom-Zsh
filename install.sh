@@ -81,6 +81,7 @@ then
         installVumble
         installColorVim
         installScriptVim
+        echo -e "$Cyan Well done! reboot your terminal"
     else
         echo "Follow the readme =)"
     fi
