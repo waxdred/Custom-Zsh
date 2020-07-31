@@ -16,9 +16,6 @@ settingFont()
 	echo -e "$Cyan Open setting Profil/Other action/import JSon Profil $Color_Off"
 	echo "Setting finish?"
 	read var
-	echo -e "$Cyan Changer color Profil/Colors/Color Preset/import\n /custome_Zsh/Wax_Iterm.itercolors$Color_Off"
-	echo "Setting finsih?"
-	read var
 }
 
 installPowerline()
@@ -52,7 +49,7 @@ installColorVim()
 	cp ~/Custom-Zsh/cool.vim ~/.vim/bundle/vim-airline-themes/autoload/airline/themes
 	echo "Copy Color vim"
 	mkdir ~/.vim/Colors
-	cp ~/Custom-Zsh/wax.vim ~/.vim/Colors
+	cp ~/Custom-Zsh/ColorCyan.vim ~/.vim/Colors
 }
 
 installScriptVim()
@@ -64,11 +61,29 @@ installScriptVim()
     cp ~/Custom-Zsh/check ~/script_vim/.
 }
 echo -e "$Cyan         Well done! Reboot your terminal$Color_Off"
-installNerdFont
-settingFont
-installPowerline
-configZshrc
-configVimrc
-installVumble
-installColorVim
-installScriptVim
+
+echo "Welcome choose an option"
+echo "1) new configuration"
+echo "2) add theme on configuration"
+read var
+
+if [ $var -eq 1 ]
+then
+    echo "Attention this option create new vimrc and zshrc\nStill want continue Y / N"
+    read var
+    if [ "$var" = "y" ]
+    then
+        installNerdFont
+        settingFont
+        installPowerline
+        configZshrc
+        configVimrc
+        installVumble
+        installColorVim
+        installScriptVim
+    else
+        echo "Follow the readme =)"
+    fi
+else
+    echo "Follow the readme =)"
+fi
