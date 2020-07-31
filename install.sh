@@ -13,7 +13,10 @@ installNerdFont()
 
 settingFont()
 {
-	echo -e "$Cyan Open setting Profil/Other action/import JSon Profil $Color_Off"
+	echo -e "$Cyan Open setting Profil/Colors/Color Presets../import\nChoose file ~/Custom-Zsh/ColorCyan.itermcolors $Color_Off"
+	echo "Setting finish?"
+	read var
+    	echo -e "$Cyan Open setting Profil/Text/Font\nChoose MesloLGLDZ Nerd Font$Color_Off"
 	echo "Setting finish?"
 	read var
 }
