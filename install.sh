@@ -4,10 +4,16 @@
 Cyan='\033[1;36m'
 Red='\033[0;31m'
 Color_Off='\033[0m'
-
+file=~/.oh-my-zsh
 installZsh()
 {
-    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    if [ -f "$file" ]
+    then
+        echo "Install Zsh"
+    else
+        sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+        echo "use ./install.sh"
+    fi
 }
 
 installNerdFont()
@@ -69,32 +75,14 @@ installScriptVim()
     cp ~/Custom-Zsh/c_script.sh ~/script_vim/.
     cp ~/Custom-Zsh/check ~/script_vim/.
 }
-echo -e "$Cyan         Well done! Reboot your terminal$Color_Off"
 
-echo "Welcome choose an option"
-echo "1) new configuration for 42"
-echo "2) add theme on configuration"
-read var
-
-if [ $var -eq 1 ]
-then
-    echo "Attention this option create new vimrc and zshrc\nStill want continue Y / N"
-    read var
-    if [ "$var" = "y" ]
-    then
-        installZsh
-        installNerdFont
-        settingFont
-        installPowerline
-        configZshrc
-        configVimrc
-        installVumble
-        installColorVim
-        installScriptVim
-        echo -e "$Cyan Well done! reboot your terminal"
-    else
-        echo "Follow the readme =)"
-    fi
-else
-    echo "Follow the readme =)"
-fi
+installZsh
+installNerdFont
+settingFont
+installPowerline
+configZshrc
+configVimrc
+installVumble
+installColorVim
+installScriptVim
+echo -e "$Cyan Well done! reboot your terminal"
