@@ -8,7 +8,7 @@ Color_Off='\033[0m'
 installNerdFont()
 {
 	echo "Copy font "
-	cp ~/Custom-Zsh/font/* $HOME/Library/Fonts 
+	cp ~/Custom-Zsh/font/* ~/Library/Fonts 
 }
 
 settingFont()
@@ -29,7 +29,8 @@ installPowerline()
 configZshrc()
 {
 	echo "Copy .zshrc"
-	cp ~/Custom-Zsh/zshrc ~/.zshrc
+    sed -i".bak" '/ZSH_THEME="robbyrussell"/d' .zshrc
+	echo ~/Custom-Zsh/zshrc >> ~/.zshrc
 }
 
 configVimrc()
@@ -40,10 +41,10 @@ configVimrc()
 
 installVumble()
 {
+    echo "install Plugin vim:"
 	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-	echo -e "$Cyan open new page vim use :PluginInstall$Color_Off"
-	echo "Setting finish?"
-	read var
+    vim +PluginInstall +qall
+    echo "done!"
 }
 
 installColorVim()
@@ -53,6 +54,8 @@ installColorVim()
 	echo "Copy Color vim"
 	mkdir ~/.vim/Colors
 	cp ~/Custom-Zsh/ColorCyan.vim ~/.vim/Colors
+    sed '11i\
+    colo ColorCyan' ~/.vimrc
 }
 
 installScriptVim()
@@ -66,7 +69,7 @@ installScriptVim()
 echo -e "$Cyan         Well done! Reboot your terminal$Color_Off"
 
 echo "Welcome choose an option"
-echo "1) new configuration"
+echo "1) new configuration for 42"
 echo "2) add theme on configuration"
 read var
 

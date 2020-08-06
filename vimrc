@@ -9,7 +9,8 @@ set showmatch
 set rnu
 set nu
 syntax enable
-colo ColorCyan
+
+
 set backspace=indent,eol,start
 
 " Cmd pour auto ouvrir quifix pour make
