@@ -5,6 +5,11 @@ Cyan='\033[1;36m'
 Red='\033[0;31m'
 Color_Off='\033[0m'
 
+installZsh()
+{
+    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+}
+
 installNerdFont()
 {
 	echo "Copy font "
