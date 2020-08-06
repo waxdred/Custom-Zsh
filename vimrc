@@ -9,7 +9,7 @@ set showmatch
 set rnu
 set nu
 syntax enable
-colo wax
+colo ColorCyan
 set backspace=indent,eol,start
 
 "Vim airline setting
