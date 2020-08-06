@@ -84,6 +84,7 @@ then
     read var
     if [ "$var" = "y" ]
     then
+        installZsh
         installNerdFont
         settingFont
         installPowerline
