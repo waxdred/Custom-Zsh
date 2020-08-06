@@ -58,8 +58,6 @@ installColorVim()
 	echo "Copy Color vim"
 	mkdir ~/.vim/Colors
 	cp ~/Custom-Zsh/ColorCyan.vim ~/.vim/Colors
-    sed '11i\
-    colo ColorCyan' ~/.vimrc
 }
 
 installScriptVim()

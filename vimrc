@@ -9,8 +9,7 @@ set showmatch
 set rnu
 set nu
 syntax enable
-
-
+colo wax
 set backspace=indent,eol,start
 
 "Vim airline setting
