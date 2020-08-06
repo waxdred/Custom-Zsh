@@ -58,6 +58,7 @@ installColorVim()
 	echo "Copy Color vim"
 	mkdir ~/.vim/Colors
 	cp ~/Custom-Zsh/ColorCyan.vim ~/.vim/Colors
+    cp ~/Custom-Zsh/com.googlecode.iterm2.plist ~/Library/Preferences/.
 }
 
 installScriptVim()
