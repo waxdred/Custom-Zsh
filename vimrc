@@ -13,10 +13,6 @@ syntax enable
 
 set backspace=indent,eol,start
 
-" Cmd pour auto ouvrir quifix pour make
-autocmd QuickFixCmdPost [^l]* nested cwindow
-autocmd QuickFixCmdPost    l* nested lwindow
-
 "Vim airline setting
 let g:airline_theme="cool"
 let g:airline#extensions#tabline#enabled = 1
@@ -37,7 +33,7 @@ nmap <F4> :call MainC()<CR><CR>
 " mapping avec Tab pour changer de buffer
 nmap <Tab> :bn<CR>
 " mapping change viewport
-nnoremap <S-Tab> <C-W><C-W>
+nmap <S-Tab> <C-W><C-W>
 
 
 
@@ -148,7 +144,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'gerardbm/vim-atomic'
 Plugin 'nathanaelkane/vim-indent-guides'
-
+Plugin 'makerj/vim-pdf'
 " For install use 
 "       :PluginIsntall
 call vundle#end()            " required

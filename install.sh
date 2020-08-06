@@ -34,8 +34,7 @@ installPowerline()
 configZshrc()
 {
 	echo "Copy .zshrc"
-    sed -i".bak" '/ZSH_THEME="robbyrussell"/d' .zshrc
-	echo ~/Custom-Zsh/zshrc >> ~/.zshrc
+	cp ~/Custom-Zsh/zshrc  ~/.zshrc
 }
 
 configVimrc()
