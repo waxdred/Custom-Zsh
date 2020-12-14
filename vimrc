@@ -144,6 +144,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'gerardbm/vim-atomic'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'makerj/vim-pdf'
+Plugin 'vim-scripts/AutoComplPop'
 " For install use 
 "       :PluginIsntall
 call vundle#end()            " required
