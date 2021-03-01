@@ -12,6 +12,11 @@ set autoread
 syntax enable
 colo ColorCyan
 set backspace=indent,eol,start
+"autorun highlight var
+function!Seman()
+    exe":SemanticHighlight"
+endfunction
+autocmd FileType c call Seman()
 
 "Autosave
 autocmd TextChanged,TextChangedI <buffer> silent write
@@ -30,8 +35,7 @@ let g:airline#extensions#branch#enabled = 1
 
 " Creation hi with matching
 autocmd FileType c match Identifier /ft_[a-z_]*/
-autocmd FileType c 2match Type /[+=\-%\/<>*&]/
-autocmd FileType c 3match Value /'[a-z,0-9 A-Z]'/
+autocmd FileType c 2match Var /[+=\-%\/<>*&]/
 
 " Mapping appel fonction
 nmap <F2> :call MakeFile()<CR><CR>
@@ -167,7 +171,7 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'mileszs/ack.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'rhysd/open-pdf.vim'
-
+Plugin 'jaxbot/semantic-highlight.vim'
 
 " For install use 
 "       :PluginIsntall
