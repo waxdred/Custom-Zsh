@@ -8,9 +8,17 @@ set clipboard=unnamed
 set showmatch
 set rnu
 set nu
+set autoread
 syntax enable
 colo ColorCyan
 set backspace=indent,eol,start
+
+"Autosave
+autocmd TextChanged,TextChangedI <buffer> silent write
+
+" autocompleted css
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
 
 "Vim airline setting
 let g:airline_theme="cool"
@@ -70,6 +78,12 @@ autocmd FileType c inoremap [ []<Left>
 " auto complede ifndef when *.h it's create
 autocmd BufNewFile *.h  :call CheckHFile()
 
+augroup quickfix
+    autocmd!
+    autocmd QuickFixCmdPost [^l]* cwindow
+    autocmd QuickFixCmdPost l* lwindow
+augroup END
+
 " ===============fonction================ 
 "<F4> Auto write Main C
 function! MainC()
@@ -118,7 +132,11 @@ endfunction
 "<F2>fonction copy MakeFile to currently dir
 function! MakeFile()
     let g:dir=getcwd()
-    execute "! cp /Users/waxcoin/script_vim/Makefile ". g:dir
+    execute "! cp ~/script_vim/Makefile ". g:dir
+endfunction
+
+function! G(test)
+    execute ":vimgrep /" .a:test."/g %"
 endfunction
 
 " set the runtime path to include Vundle and initialize
@@ -145,6 +163,12 @@ Plugin 'gerardbm/vim-atomic'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'makerj/vim-pdf'
 Plugin 'vim-scripts/AutoComplPop'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'mileszs/ack.vim'
+Plugin 'mattn/emmet-vim'
+Plugin 'rhysd/open-pdf.vim'
+
+
 " For install use 
 "       :PluginIsntall
 call vundle#end()            " required
