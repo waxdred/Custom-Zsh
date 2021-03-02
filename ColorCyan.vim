@@ -21,9 +21,10 @@ hi LineNr       cterm=none ctermfg=Cyan ctermbg=235 gui=NONE guifg=DarkGrey guib
 " Creation des couleurs
 
 hi Comment      ctermfg=14 guifg=black
+hi Var          ctermfg=51 guifg=cyan
 hi Constant     ctermfg=166 guifg=black
 hi Identifier   ctermfg=39 cterm=none guifg=palegreen
-hi Type         ctermfg=133 guifg=black
+hi Type         ctermfg=44 guifg=black
 hi Statement    ctermfg=133 guifg=black
 hi PreProc      ctermfg=14 guifg=black
 hi Value      ctermfg=22 guifg=black
